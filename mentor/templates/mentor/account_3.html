@@ -1,0 +1,308 @@
+{% extends "mentor/base0.html" %}
+{% load i18n %}
+
+{% block title %}Account Settings with ModelForm{% endblock title %}
+
+{% block content %}
+
+    <form action="/account_2/" method="post" enctype="multipart/form-data">
+        {% csrf_token  %}
+        {{ user_form.as_p }}
+        {{ profile_form.as_p }}
+
+        <div class="container">
+            <div class="row">
+                <h1>Using ModelFrom</h1>
+                <h2>Account Settings1: {{ user.get_full_name }}</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-10">
+                    <b>Select your interest and skills to participate in our program</b>
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                    <label for="id_bio">Bio:</label>
+                </div>
+                <div class="col-lg-8">
+                    <textarea cols="90" id="id_bio" maxlength="500" name="bio" rows="10"></textarea>
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                    <label for="id_location">Location:</label>
+                </div>
+                <div class="col-lg-8">
+                    <input id="id_location" maxlength="30" name="location" type="text" value="zz" />
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                    <label for="id_birth_date">Birth date:</label>
+                </div>
+                <div class="col-lg-8">
+                    <input id="id_birth_date" name="birth_date" type="text" />
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                    <label for="id_facebook">Facebook:</label>
+                </div>
+                <div class="col-lg-8">
+                    <input id="id_facebook" maxlength="100" name="facebook" type="text" value="xx" />
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                    <label for="id_twitter">Twitter:</label>
+                </div>
+                <div class="col-lg-8">
+                    <input id="id_twitter" maxlength="100" name="twitter" type="text" />
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                    <label for="id_github">Github:</label>
+                </div>
+                <div class="col-lg-8">
+                    <input id="id_github" maxlength="100" name="github" type="text" />
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                    <label for="id_linkedin">Linkedin:</label>
+                </div>
+                <div class="col-lg-8">
+                    <input id="id_linkedin" maxlength="100" name="linkedin" type="text" />
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                    <label for="id_google">Google:</label>
+                </div>
+                <div class="col-lg-8">
+                    <input id="id_google" maxlength="100" name="google" type="text" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                    <label for="id_google">Skype:</label>
+                </div>
+                <div class="col-lg-8">
+                    <input id="id_google" maxlength="100" name="google" type="text" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                    <label for="id_google">Phone:</label>
+                </div>
+                <div class="col-lg-8">
+                    <input id="id_google" maxlength="100" name="google" type="text" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-5">
+                    Mentor
+                </div>
+                <div class="col-lg-5">
+                    Mentee
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                    <label for="id_mentor">Mentor:</label>
+                </div>
+                <div class="col-lg-2">
+                    <input checked="checked" id="id_mentor" name="mentor" type="checkbox" />
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                    <label for="id_mentee">Mentee:</label>
+                </div>
+                <div class="col-lg-2">
+                    <input checked="checked" id="id_mentee" name="mentee" type="checkbox" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                    <label for="id_interest_in_technology">Interest in technology:</label>
+                </div>
+                <div class="col-lg-2">
+                    <input id="id_interest_in_technology" name="interest_in_technology" type="checkbox" />
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                    <label for="id_learn_technology">Learn technology:</label>
+                </div>
+                <div class="col-lg-2">
+                    <input id="id_learn_technology" name="learn_technology" type="checkbox" />
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                    <label for="id_interest_in_marketing">Interest in marketing:</label>
+                </div>
+                <div class="col-lg-2">
+                    <input id="id_interest_in_marketing" name="interest_in_marketing" type="checkbox" />
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                    <label for="id_learn_marketing">Learn marketing:</label>
+                </div>
+                <div class="col-lg-2">
+                    <input id="id_learn_marketing" name="learn_marketing" type="checkbox" />
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                    <label for="id_interest_in_legal">Interest in legal:</label>
+                </div>
+                <div class="col-lg-2">
+                    <input id="id_interest_in_legal" name="interest_in_legal" type="checkbox" />
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                    <label for="id_learn_legal">Learn legal:</label>
+                </div>
+                <div class="col-lg-2">
+                    <input id="id_learn_legal" name="learn_legal" type="checkbox" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                    <label for="id_interest_in_leadership">Interest in leadership:</label>
+                </div>
+                <div class="col-lg-2">
+                    <input id="id_interest_in_leadership" name="interest_in_leadership" type="checkbox" />
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                    <label for="id_learn_leadership">Learn leadership:</label>
+                </div>
+                <div class="col-lg-2">
+                    <input id="id_learn_leadership" name="learn_leadership" type="checkbox" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                    <label for="id_interest_in_business">Interest in business:</label>
+                </div>
+                <div class="col-lg-2">
+                    <input id="id_interest_in_business" name="interest_in_business" type="checkbox" />
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                    <label for="id_learn_business">Learn business:</label>
+                </div>
+                <div class="col-lg-2">
+                    <input id="id_learn_business" name="learn_business" type="checkbox" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                    <label for="id_interest_in_operations">Interest in operations:</label>
+                </div>
+                <div class="col-lg-2">
+                    <input id="id_interest_in_operations" name="interest_in_operations" type="checkbox" />
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                    <label for="id_learn_operations">Learn operations:</label>
+                </div>
+                <div class="col-lg-2">
+                    <input id="id_learn_operations" name="learn_operations" type="checkbox" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                    <label for="id_interest_in_investments">Interest in investments:</label>
+                </div>
+                <div class="col-lg-2">
+                    <input id="id_interest_in_investments" name="interest_in_investments" type="checkbox" />
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                    <label for="id_learn_investments">Learn investments:</label>
+                </div>
+                <div class="col-lg-2">
+                    <input id="id_learn_investments" name="learn_investments" type="checkbox" />
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                    <label for="id_interest_in_professional_development">Interest in professional development:</label>
+                </div>
+                <div class="col-lg-2">
+                    <input id="id_interest_in_professional_development" name="interest_in_professional_development" type="checkbox" />
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                    <label for="id_learn_professional_development">Learn professional development:</label>
+                </div>
+                <div class="col-lg-2">
+                    <input id="id_learn_professional_development" name="learn_professional_development" type="checkbox" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <button type="submit">{% trans "Save" %}</button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+{% endblock content %}

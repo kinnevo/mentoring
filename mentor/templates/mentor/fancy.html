@@ -1,0 +1,83 @@
+{% extends "mentor/base0.html" %}
+{% load i18n %}
+
+{% block title %}My Profile{% endblock title %}
+
+{% block content %}
+
+<div class="container">
+
+<form action="/fancy/" method="post">
+    {% csrf_token  %}
+    <div class="row">
+        <div class="col-lg-12">
+            <b>Get involved in a learning community and explore how you can learn and teach in your free time</b>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <b>Points of contact</b>
+                </div>
+            </div>
+            <div class="row" style ='background-color: #21a6cb;'>
+                <div class="col-lg-6">
+                    <fieldset>
+                        <legend>Communication</legend>
+                        Phone: <input type="text" size="30" value="{{ datos.phone }}"><br>
+                        Skype: <input type="text" size="30"><br>
+                        Hangouts: <input type="text" size="30"><br>
+                    </fieldset>
+                </div>
+                <div class="col-lg-6">
+                    <fieldset>
+                        <legend>Social Media</legend>
+                        Facebook: <input type="text" size="30" id="id_facebook", name="facebook" value="{{ datos.facebook }}"><br>
+                        LinkedIn: <input type="text" size="30"><br>
+                        Twitter: <input type="text" size="30"><br>
+                    </fieldset>
+                </div>
+            </div>
+
+            <div class="row" style ='background-color: #21a6cb;' >
+                <div class="col-lg-6">
+                    <fieldset>
+                        <legend>Mentor</legend>
+                        Interest 1: <input type="text" size="30"><br>
+                        Interest 2: <input type="text" size="30"><br>
+                    </fieldset>
+                </div>
+                <div class="col-lg-6">
+                    <fieldset>
+                        <legend>Mentee</legend>
+                        Interest 1: <input type="text" size="30"><br>
+                        Interest 2: <input type="text" size="30"><br>
+                    </fieldset>
+                </div>
+            </div>
+
+
+            <div class="row" style ='background-color: #2ba6cb;'>
+                <div class="col-lg-6" >
+                    <fieldset>
+                        <legend>Mentor</legend>
+                        Interest 1: <input type="text" size="30"><br>
+                        Interest 2: <input type="text" size="30"><br>
+                    </fieldset>
+                </div>
+                <div class="col-lg-6" >
+                    <fieldset>
+                        <legend>Mentee</legend>
+                        Interest 1: <input type="text" size="30"><br>
+                        Interest 2: <input type="text" size="30"><br>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+       <div class="row">
+           <div class="col-lg-5"></div>
+           <div class="col-lg-2"><button type="submit">{% trans "Save" %}</button></div>
+           <div class="col-lg-5"></div>
+       </div>
+</form>
+
+</div>
+{% endblock %}

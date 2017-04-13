@@ -1,0 +1,53 @@
+{% extends "mentor/base0.html" %}
+{% load i18n %}
+
+{% block title %}Account Settings with ModelForm{% endblock title %}
+
+{% block content %}
+
+    <form class="form-horizontal" action="/prof/" method="post" enctype="multipart/form-data">
+        {% csrf_token  %}
+        <fieldset class="control-group">
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-5">
+                    Mentor
+                </div>
+                <div class="col-lg-5">
+                    Mentee
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                    <label for="id_location">Location:</label>
+                </div>
+                <div class="col-lg-8">
+                    <input id="id_location" maxlength="30" name="location" type="text" value="{{profile_form.location}}" />
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-5">
+                    <label class="control-label" for="id_mentor">Mentor:</label>
+                    <input class='controls' id='id_mentor' name='mentor' type='checkbox' {{ profile_form.mentor }} />
+                    <label class="control-label" for="id_mentee">Mentee:</label>
+                    <input class="controls" value='{{ profile_form.mentee }}' id="id_mentee" name='mentee' type="checkbox" />
+                </div>
+            </div>
+        </fieldset>
+
+
+            <div class="row">
+                <div class="col-lg-12, form-actions">
+                    <button type="submit">{% trans "Save" %}</button>
+                </div>
+            </div>
+
+
+    </form>
+
+{% endblock content %}

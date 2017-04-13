@@ -1,0 +1,202 @@
+{% extends "mentor/base0.html" %}
+{% load i18n %}
+
+{% block title %}Dashboard{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <h1>Dashboard</h1>
+            <h2>Know about the mentors, mentees and their interest</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10">
+                <br>
+                <b>Statistics of {{ stat.participants }} participants in our site</b>
+                <br>
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-5">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <b>Mentors:</b>
+                    </div>
+                    <div class="col-lg-6">
+                        {{ stat.mentors }} Mentors
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        Interest in technology
+                    </div>
+                    <div class="col-lg-6">
+                        {{ stat.interest_in_technology }}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        Interest in marketing
+                    </div>
+                    <div class="col-lg-6">
+                        {{ stat.interest_in_marketing }}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        Interest in legal
+                    </div>
+                    <div class="col-lg-6">
+                        {{ stat.interest_in_legal }}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        Interest in leadership
+                    </div>
+                    <div class="col-lg-6">
+                        {{ stat.interest_in_leadership }}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        Interest in business
+                    </div>
+                    <div class="col-lg-6">
+                        {{ stat.interest_in_business }}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        Interest in operations
+                    </div>
+                    <div class="col-lg-6">
+                        {{ stat.interest_in_operations }}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        Interest in investments
+                    </div>
+                    <div class="col-lg-6">
+                        {{ stat.interest_in_investments }}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        Interest in professional development
+                    </div>
+                    <div class="col-lg-6">
+                        {{ stat.interest_in_professional_development }}
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-5">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <b>Mentees:</b>
+                    </div>
+                    <div class="col-lg-6">
+                        {{ stat.mentees }} Mentees
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        Learn technology
+                    </div>
+                    <div class="col-lg-6">
+                        {{ stat.learn_technology }}
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        Learn marketing
+                    </div>
+                    <div class="col-lg-6">
+                        {{ stat.learn_marketing }}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        Learn legal
+                    </div>
+                    <div class="col-lg-6">
+                        {{ stat.learn_legal }}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        Learn leadership
+                    </div>
+                    <div class="col-lg-6">
+                        {{ stat.learn_leadership }}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        Learn business
+                    </div>
+                    <div class="col-lg-6">
+                        {{ stat.learn_business }}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        Learn operations
+                    </div>
+                    <div class="col-lg-6">
+                        {{ stat.learn_operations }}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        Learn investments
+                    </div>
+                    <div class="col-lg-6">
+                        {{ stat.learn_investments }}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        Learn professional development
+                    </div>
+                    <div class="col-lg-6">
+                        {{ stat.learn_professional_development}}
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="col-lg-1"></div>
+
+        </div>
+    </div>
+{% endblock content %}
+
+

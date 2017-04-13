@@ -1,0 +1,22 @@
+{% extends "mentor/base0.html" %}
+{% load i18n %}
+
+{% block title %}Account Settings with ModelForm{% endblock title %}
+
+{% block content %}
+
+    <form action="/account_2/" method="post" enctype="multipart/form-data">
+    {% csrf_token  %}
+    {{ profile_form.as_p }}
+
+        {% for field in form %}
+            <div class="form-group">
+                {{ field }}
+            </div>
+        {% endfor %}
+
+        <button type="submit">{% trans "Save" %}</button>
+
+    </form>
+
+{% endblock content %}

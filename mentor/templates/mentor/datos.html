@@ -1,0 +1,13 @@
+{% extends "mentor/base0.html" %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+
+    <form action="" method="POST" enctype="multipart/form-data" class="uniForm">
+        {% crispy form %}
+        <button type="submit">{% trans "Save" %}</button>
+    </form>
+{% endblock content %}

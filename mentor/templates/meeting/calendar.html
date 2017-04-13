@@ -1,0 +1,20 @@
+{% extends "mentor/base0.html" %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+{% block title %}Calendar{% endblock title %}
+
+{% block content %}
+<h1>Calendar</h1>
+    <p>Every time that it is run an assignment task it is created an entry in the meeting database for each user the user</p>
+    <p>Meeting Information:
+        <ul>
+            <li>Mentor name</li>
+            <li>Mentee Name</li>
+            <li>Subject</li>
+            <li>Date and time</li>
+            <li>Status: assigned, executed, canceled</li>
+            <li>comments</li>
+        </ul>
+    </p>
+{% endblock content %}

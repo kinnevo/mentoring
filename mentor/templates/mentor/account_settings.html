@@ -1,0 +1,23 @@
+{% extends "mentor/base0.html" %}
+{% load i18n %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+
+    <h2>Account Settings: {{ user.get_full_name }}</h2>
+    <ul>
+        <li>Username: {{ user.username }}</li>
+        <li>Location: {{ user.profile.location }}</li>
+        <li>Birth Date: {{ user.profile.birth_date }}</li>
+        <li>Mentor: {{ user.profile.mentor }}</li>
+    </ul>
+
+    <form method="post" action="/account_settings/" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ user_form.as_p }}
+        {{ profile_form.as_p }}
+        <button type="submit">{% trans "Save" %}</button>
+    </form>
+
+{% endblock %}
