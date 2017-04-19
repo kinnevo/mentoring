@@ -1,0 +1,13 @@
+{% extends "mentor/base0.html" %}
+
+{% block content %}
+    <h1>Mentor List</h1>
+
+    Table titles
+    <p>
+        {% for m in mentor  %}
+            <p>{{ m.username }}</p>
+            <p>{{ m }}</p>
+        {% endfor %}
+    </p>
+{% endblock content %}
