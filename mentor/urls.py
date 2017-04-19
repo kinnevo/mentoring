@@ -2,7 +2,8 @@ from django.conf.urls import url
 from .views import home, login_user, logout_user, update_profile, account_settings, account_1, account_2
 from .views import prof, fancy, crispy, datos, dashboard, meeting, calendar,\
      account_activation_sent, activate, signup_user, \
-     MeetingListView, MeetingListDetailView, meeting_detail_view, mentors, mentees
+     MeetingListView, MeetingListDetailView, meeting_detail_view, mentors, mentees, \
+     set_as_mentor, set_as_mentee, mentors_statistics, mentees_statistics
 
 
 urlpatterns = [
@@ -11,6 +12,9 @@ urlpatterns = [
     url(r'^meeting/$', meeting, name='meeting'),
     url(r'^list_meeting/$', MeetingListView.as_view(), name='list_meeting'),
     url(r'^list_meeting_detail/(?P<pk>\d+)$', meeting_detail_view, name='list_meeting_detail'),
+
+    url(r'^mentees_statistics/$', mentees_statistics, name='mentees_statistics'),
+    url(r'^mentors_statistics/$', mentors_statistics, name='mentors_statistics'),
 
     url(r'^mentors/$', mentors, name='mentors'),
     url(r'^mentees/$', mentees, name='mentees'),
@@ -33,4 +37,8 @@ urlpatterns = [
     url(r'^account_activation_sent/$', account_activation_sent, name='account_activation_sent'),
     url(r'^activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
         activate, name='activate'),
+    url(r'^set_as_mentor/$', set_as_mentor, name='set_as_mentor'),
+    url(r'^set_as_mentee/$', set_as_mentee, name='set_as_mentee'),
+
+
 ]

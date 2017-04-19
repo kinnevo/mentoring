@@ -4,12 +4,17 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-from django.contrib import admin
 
 
 class Profile(models.Model):
+    ACTIVE_MODE = (
+        ('Mentor', 'Mentor'),
+        ('Mentee', 'Mentee'),
+    )
+
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     email_confirmed = models.BooleanField(default=False)
+    active_mode = models.CharField(max_length=6, choices=ACTIVE_MODE, default='Mentee')
 
     bio = models.TextField(max_length=500, blank=True)
     avatar = models.ImageField(upload_to='avatars/', null=True, blank=True)
@@ -109,6 +114,6 @@ class Meeting(models.Model):
     mentee_name = models.CharField(max_length=100, blank=True)
     date = models.DateField(null=True, blank=True)
     subject = models.CharField(max_length=100, blank=True)
-    status = models.CharField(max_length=1, choices=MEETING_STATUS )
+    status = models.CharField(max_length=1, choices=MEETING_STATUS)
     comments = models.TextField(max_length=500, blank=True)
 

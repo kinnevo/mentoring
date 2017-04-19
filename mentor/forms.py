@@ -167,4 +167,4 @@ class DatosForm(forms.ModelForm):
 
     class Meta:
         model = Datos
-        fields = ['phone', 'facebook' ]
+        fields = ['phone', 'facebook']

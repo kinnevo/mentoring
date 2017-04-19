@@ -1,13 +1,45 @@
 {% extends "mentor/base0.html" %}
+{% load staticfiles %}
+
+{% block title %}List Skills{% endblock title %}
+
+{% block page_css %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/mentor.css" %}"/>
+{% endblock %}
 
 {% block content %}
-    <h1>Mentor List</h1>
+    <div class="container" role="main">
+        <div class="container row">
+            <div class="container caja">
+                <h1>Mentor List</h1>
+                {% if user.profile.active_mode == "Mentee" %}
+                <p>You as <b>Mentee</b> can explore the bio and experience of our <b>Mentors</b> in
+                    the site to find the right person to ask for help to achieve your goals.
+                    Feel free to explore around and contact them, making a good description
+                    about your needs.</p>
+                {% else %}
+                <p>You as <b>Mentor</b> look for other participants that can build great synergies
+                among people of common interest interested in learn and share with the members of our
+                community</p>
+                {% endif %}
+            </div>
+        </div>
 
-    Table titles
-    <p>
         {% for m in mentor  %}
-            <p>{{ m.username }}</p>
-            <p>{{ m }}</p>
+            <div class="container row">
+                <div class="container mentor_list">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-2">
+                        <img src="{{ MEDIA_URL }}{{ m.profile.avatar  }} ">
+                    </div>
+                    <div class="col-lg-8">
+
+                    {{ m.username }}
+                    </div>
+                    <div class="col-lg-1"></div>
+
+                </div>
+            </div>
         {% endfor %}
-    </p>
+    </div>
 {% endblock content %}

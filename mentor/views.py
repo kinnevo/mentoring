@@ -9,7 +9,6 @@ from django.utils.translation import ugettext, ugettext_lazy as _
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 
-
 from django.contrib.sites.shortcuts import get_current_site
 from django.contrib.auth.models import User
 from django.utils.encoding import force_bytes
@@ -414,14 +413,45 @@ def meeting_detail_view( request, pk):
                   )
 
 
+@login_required
 def mentors(request):
     mentor = User.objects.filter(profile__mentor=True)
-#    print mentor.profile.interest_in_business
-
     return render(request, 'meeting/mentors.html', {'mentor': mentor})
 
 
+@login_required
 def mentees(request):
     mentee = {}
-    return render(request, 'meeting/mentees.html', {'mentor': mentee})
+    return render(request, 'meeting/mentees.html', {'mentee': mentee})
 
+
+@login_required
+def mentors_statistics(request):
+    mentor = {}
+    return render(request, 'meeting/mentors_statistics.html', {'mentor': mentor})
+
+
+@login_required
+def mentees_statistics(request):
+    mentee = {}
+    return render(request, 'meeting/mentees_statistics.html', {'mentee': mentee})
+
+
+@login_required
+def set_as_mentor(request):
+    mode = Profile.objects.get(user=request.user.id)
+    print "Mentor: ", mode.active_mode
+    mode.active_mode = "Mentor"
+    mode.save()
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+#    return render(request, ".")
+
+
+@login_required
+def set_as_mentee(request):
+    mode = Profile.objects.get(user=request.user.id)
+    print "Mentee: ", mode.active_mode
+    mode.active_mode = "Mentee"
+    mode.save()
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+#    return render(request, ".")

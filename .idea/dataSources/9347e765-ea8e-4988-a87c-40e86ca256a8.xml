@@ -9,8 +9,8 @@
     </database>
     <schema id="3" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2017-04-12.16:58:57.505</IntrospectionTimestamp>
-      <IntrospectionStateNumber>1797</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2017-04-18.10:16:08.423</IntrospectionTimestamp>
+      <IntrospectionStateNumber>1827</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -151,7 +151,7 @@
     </table>
     <table id="33" parent="3" name="mentor_profile">
       <ObjectId>17107</ObjectId>
-      <StateNumber>1797</StateNumber>
+      <StateNumber>1827</StateNumber>
     </table>
     <column id="34" parent="21" name="id">
       <Position>1</Position>
@@ -1070,28 +1070,34 @@ model</ColNames>
       <DataType>varchar(100)|0</DataType>
       <StateNumber>1797</StateNumber>
     </column>
-    <index id="186" parent="33" name="mentor_profile_pkey">
+    <column id="186" parent="33" name="active_mode">
+      <Position>33</Position>
+      <DataType>varchar(6)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1827</StateNumber>
+    </column>
+    <index id="187" parent="33" name="mentor_profile_pkey">
       <ObjectId>17114</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="187" parent="33" name="mentor_profile_user_id_key">
+    <index id="188" parent="33" name="mentor_profile_user_id_key">
       <ObjectId>17116</ObjectId>
       <ColNames>user_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="188" parent="33" name="mentor_profile_pkey">
+    <key id="189" parent="33" name="mentor_profile_pkey">
       <ObjectId>17115</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>mentor_profile_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <key id="189" parent="33" name="mentor_profile_user_id_key">
+    <key id="190" parent="33" name="mentor_profile_user_id_key">
       <ObjectId>17117</ObjectId>
       <ColNames>user_id</ColNames>
       <UnderlyingIndexName>mentor_profile_user_id_key</UnderlyingIndexName>
     </key>
-    <foreign-key id="190" parent="33" name="mentor_profile_user_id_a4034c13_fk_auth_user_id">
+    <foreign-key id="191" parent="33" name="mentor_profile_user_id_a4034c13_fk_auth_user_id">
       <ObjectId>17118</ObjectId>
       <ColNames>user_id</ColNames>
       <Deferrable>1</Deferrable>
